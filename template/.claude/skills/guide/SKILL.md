@@ -29,10 +29,15 @@ Supporting files in this folder:
 ## The loop for each step
 
 ### 1. Concepts
-Explain what the step needs, following `teaching.md`: start from the problem, explain why
-this design over the alternatives, show how it fits the rest of the system, and end with a
-few "check your understanding" questions. If the user asks for more depth, go back to the
-fundamentals. Don't move on until they're comfortable.
+Explain what the step needs, following `teaching.md`, at the depth of **a capable developer
+who is new to this area**. **Keep it focused:** explain only what this step needs. Cover:
+- what it is and why it exists
+- why this design over the alternatives, linked to the plan's decisions (D1…Dn)
+- pitfalls to avoid
+- how it fits the rest of the system
+
+End with a few "check your understanding" questions. If the user asks for more depth, go
+back to the fundamentals. Don't move on until they're comfortable.
 
 ### 2. Experiment before you specify
 Before writing the spec, run small scratch programs in a temp directory (never in the repo)
@@ -65,11 +70,12 @@ It's fine and expected that tests don't compile until the user's code exists. Up
 
 ### 5. While the user writes
 - Give **hints before answers**: point to the concept, the API, or the line to look at.
+  Only if they ask, give a minimal snippet of just the part they're stuck on.
 - If they're stuck on *how to find* something, teach the method (see `teaching.md`) rather
   than handing over the answer.
 - If they ask a conceptual question, answer it. Don't start running tools.
 
-### 6. Review
+### 6. Review (when the user says it's ready)
 Follow `review.md`. Run the build, lint and tests. Report findings grouped as
 *worth changing* / *consider* / *leave alone*, each with why it matters. The user decides
 what to change. Don't edit their code.

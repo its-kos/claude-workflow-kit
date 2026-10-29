@@ -38,7 +38,9 @@ The user decides what to do. Record accepted and declined findings in `progress.
 
 - **Correctness against the spec:** every behaviour and every error case.
 - **Error handling:** errors not ignored, wrapped once with useful context, consistent
-  message style, no secrets in messages.
+  message style.
+- **Secrets:** never logged, printed, or put in error messages (keys, passwords, tokens,
+  decrypted data).
 - **Input handling at trust boundaries:** see the checklist in `teaching.md`.
 - **Silent failures:** functions that can return "no error" with no or bad data.
 - **Resource and safety issues:** file permissions, unbounded sizes, aliasing (returning
@@ -47,7 +49,8 @@ The user decides what to do. Record accepted and declined findings in `progress.
   why, constants for strings and numbers shared between functions.
 - **Language traps:** e.g. variable shadowing, pointer vs. value, nil vs. empty,
   integer overflow. Check the ones relevant to the project's language.
-- **Tests still meaningful:** if the user changed tests, make sure they didn't weaken them.
+- **Tests cover every error case** in the spec, not just the happy path. If the user changed
+  tests, make sure they didn't weaken them.
 - **Over-engineering:** extra abstraction or features the plan didn't ask for.
 
 ## Also check outside the code
